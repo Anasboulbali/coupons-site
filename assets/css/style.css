@@ -455,3 +455,86 @@ body {
         transform: scale(1);
     }
 }
+/* Add to style.css */
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 6rem 1rem 3rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .search-box {
+        margin: 2rem auto;
+    }
+
+    /* Coupon Cards */
+    .coupon-card {
+        margin: 0 1rem 1rem;
+    }
+
+    .coupon-code {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .copy-btn {
+        width: 100%;
+    }
+
+    /* Newsletter Section */
+    .newsletter-box {
+        padding: 2rem 1rem;
+    }
+
+    .newsletter-form .input-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* Share Modal */
+    .share-modal-content {
+        width: 90%;
+        margin: 1rem;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .coupon-card {
+        margin: 0 0.5rem 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .coupon-card:hover {
+        transform: none;
+    }
+
+    .copy-btn:hover {
+        transform: none;
+    }
+}
