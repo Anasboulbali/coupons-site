@@ -1,152 +1,193 @@
+/* Global Styles */
 :root {
-    --primary-color: #6C63FF;
-    --secondary-color: #2F2E41;
-    --accent-color: #00BFA6;
-    --background-color: #F8F9FD;
-    --text-color: #2F2E41;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --text-color: #2C3E50;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--background-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Language Switcher */
-.language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+/* Header Styles */
+.navbar-brand i {
+    margin-right: 8px;
 }
 
-.lang-btn {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 5px 10px;
+.category-bar {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.category-bar .btn {
+    white-space: nowrap;
     margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Header */
-.main-header {
-    background: white;
-    box-shadow: var(--card-shadow);
-}
-
-.navbar-brand {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 1.5rem;
 }
 
 /* Hero Section */
 .hero-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 60px 0;
+    margin-bottom: 30px;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+/* Deal Cards */
+.deal-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.search-box {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    box-shadow: var(--card-shadow);
-}
-
-.search-btn {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    background: var(--primary-color);
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-/* Coupons Section */
-.coupons-section {
-    padding: 50px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--secondary-color);
-}
-
-.coupon-card {
     background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
 }
 
-.coupon-card:hover {
+.deal-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.deal-card .card-img-wrapper {
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.deal-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deal-card .discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.deal-card .card-body {
+    padding: 15px;
+}
+
+.deal-card .deal-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.deal-card .deal-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.deal-card .current-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.deal-card .original-price {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.deal-card .deal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: var(--light-gray);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    max-width: 400px;
 }
 
 /* Footer */
-.main-footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 50px 0;
+footer {
     margin-top: 50px;
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 10px;
+footer h5 {
+    margin-bottom: 20px;
 }
 
-.btn-subscribe {
-    background: var(--accent-color);
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+    .hero-section {
+        padding: 40px 0;
     }
-    
-    .newsletter-form {
-        flex-direction: column;
+
+    .hero-section h1 {
+        font-size: 2rem;
     }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .category-bar .row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Loading Animation */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--light-gray);
+    border-radius: 50%;
+    border-top-color: var(--secondary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
