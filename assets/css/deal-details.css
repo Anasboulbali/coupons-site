@@ -1,0 +1,71 @@
+.deal-image-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.price-container {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.original-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.savings-text {
+    display: block;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.deal-timer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.timer-unit {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 70px;
+}
+
+.timer-unit span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.highlights-container {
+    margin-top: 20px;
+}
+
+.highlights-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.highlights-container li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.highlights-container li:before {
+    content: '✓';
+    color: var(--accent-color);
+    margin-right: 10px;
+}
