@@ -1,111 +1,107 @@
 {
     "coupons": [
-        {
-            "id": "1",
-            "store": "Amazon",
-            "title": "20% Off First Order",
-            "description": "Get 20% off on your first purchase. Valid for all products.",
-            "code": "WELCOME20",
-            "discount": {
-                "type": "percentage",
-                "value": 20
-            },
-            "category": "all",
-            "expiryDate": "2024-12-31",
-            "verified": true,
-            "terms": "New customers only. Maximum discount $100.",
-            "url": "https://amazon.com",
-            "featured": true
+      {
+        "id": "1",
+        "store": "Amazon",
+        "title": "20% Off First Order",
+        "description": "Get 20% off on your first purchase. Valid for all products.",
+        "code": "WELCOME20",
+        "discount": {
+          "type": "percentage",
+          "value": 20
         },
-        {
-            "id": "2",
-            "store": "Nike",
-            "title": "Free Shipping",
-            "description": "Free shipping on all orders over $75. Valid worldwide.",
-            "code": "FREESHIP",
-            "discount": {
-                "type": "shipping",
-                "value": "free"
-            },
-            "category": "fashion",
-            "expiryDate": "2024-06-30",
-            "verified": true,
-            "terms": "Minimum purchase $75",
-            "url": "https://nike.com",
-            "featured": true
+        "category": "all",
+        "expiryDate": "2024-12-31",
+        "verified": true,
+        "terms": "New customers only. Maximum discount $100.",
+        "url": "https://amazon.com",
+        "featured": true,
+        "popularity": 95,
+        "logo": "amazon.png"
+      },
+      {
+        "id": "2",
+        "store": "Nike",
+        "title": "Free Shipping",
+        "description": "Free shipping on all orders over $75. Valid worldwide.",
+        "code": "FREESHIP",
+        "discount": {
+          "type": "shipping",
+          "value": "free"
         },
-        {
-            "id": "3",
-            "store": "Apple",
-            "title": "Student Discount",
-            "description": "Special pricing for students on MacBooks and iPads.",
-            "code": "EDU2024",
-            "discount": {
-                "type": "percentage",
-                "value": 15
-            },
-            "category": "electronics",
-            "expiryDate": "2024-09-30",
-            "verified": true,
-            "terms": "Valid student ID required",
-            "url": "https://apple.com/education",
-            "featured": false
+        "category": "fashion",
+        "expiryDate": "2024-06-30",
+        "verified": true,
+        "terms": "Minimum purchase $75",
+        "url": "https://nike.com",
+        "featured": true,
+        "popularity": 88,
+        "logo": "nike.png"
+      },
+      {
+        "id": "3",
+        "store": "Apple",
+        "title": "Student Discount",
+        "description": "Special pricing for students on MacBooks and iPads.",
+        "code": "EDU2024",
+        "discount": {
+          "type": "percentage",
+          "value": 15
         },
-        {
-            "id": "4",
-            "store": "Adidas",
-            "title": "30% Off Outlet",
-            "description": "Extra 30% off all outlet items. Limited time offer.",
-            "code": "OUTLET30",
-            "discount": {
-                "type": "percentage",
-                "value": 30
-            },
-            "category": "fashion",
-            "expiryDate": "2024-05-15",
-            "verified": true,
-            "terms": "Valid on outlet items only",
-            "url": "https://adidas.com",
-            "featured": true
-        },
-        {
-            "id": "5",
-            "store": "Best Buy",
-            "title": "$50 Off $500",
-            "description": "Save $50 on purchases over $500 in electronics.",
-            "code": "SAVE50",
-            "discount": {
-                "type": "fixed",
-                "value": 50
-            },
-            "category": "electronics",
-            "expiryDate": "2024-07-31",
-            "verified": true,
-            "terms": "Minimum purchase $500",
-            "url": "https://bestbuy.com",
-            "featured": false
-        }
+        "category": "electronics",
+        "expiryDate": "2024-09-30",
+        "verified": true,
+        "terms": "Valid student ID required",
+        "url": "https://apple.com/education",
+        "featured": false,
+        "popularity": 92,
+        "logo": "apple.png"
+      }
     ],
     "categories": [
-        {
-            "id": "all",
-            "name": "All Deals",
-            "icon": "fas fa-tags"
-        },
-        {
-            "id": "fashion",
-            "name": "Fashion",
-            "icon": "fas fa-tshirt"
-        },
-        {
-            "id": "electronics",
-            "name": "Electronics",
-            "icon": "fas fa-laptop"
-        },
-        {
-            "id": "food",
-            "name": "Food & Dining",
-            "icon": "fas fa-utensils"
-        }
+      {
+        "id": "all",
+        "name": "All Deals",
+        "icon": "fas fa-tags"
+      },
+      {
+        "id": "fashion",
+        "name": "Fashion",
+        "icon": "fas fa-tshirt"
+      },
+      {
+        "id": "electronics",
+        "name": "Electronics",
+        "icon": "fas fa-laptop"
+      },
+      {
+        "id": "food",
+        "name": "Food & Dining",
+        "icon": "fas fa-utensils"
+      }
+    ],
+    "stores": [
+      {
+        "id": "amazon",
+        "name": "Amazon",
+        "logo": "amazon.png",
+        "featured": true,
+        "couponCount": 25
+      },
+      {
+        "id": "nike",
+        "name": "Nike",
+        "logo": "nike.png",
+        "featured": true,
+        "couponCount": 15
+      },
+      {
+        "id": "apple",
+        "name": "Apple",
+        "logo": "apple.png",
+        "featured": true,
+        "couponCount": 10
+      }
     ]
-}
+  }
+  

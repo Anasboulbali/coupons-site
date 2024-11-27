@@ -1,0 +1,61 @@
+{
+    "meta": {
+      "title": "DealSpot - Best Deals & Coupons",
+      "description": "Find the best deals and coupons for your favorite stores"
+    },
+    "nav": {
+      "home": "Home",
+      "deals": "Deals",
+      "stores": "Stores",
+      "categories": "Categories",
+      "search": "Search"
+    },
+    "hero": {
+      "title": "Find the Best Deals",
+      "subtitle": "Save money with our verified coupons",
+      "searchPlaceholder": "Search for stores or brands...",
+      "popularSearches": "Popular Searches:",
+      "trending": "Trending Deals"
+    },
+    "coupons": {
+      "title": "Today's Best Deals",
+      "verified": "Verified",
+      "expires": "Expires",
+      "copy": "Copy Code",
+      "copied": "Copied!",
+      "show": "Show Code",
+      "terms": "Terms & Conditions",
+      "categories": {
+        "all": "All Categories",
+        "fashion": "Fashion",
+        "electronics": "Electronics",
+        "food": "Food & Dining"
+      },
+      "sort": {
+        "newest": "Newest First",
+        "popular": "Most Popular",
+        "ending": "Ending Soon"
+      }
+    },
+    "stores": {
+      "title": "Popular Stores",
+      "viewAll": "View All Stores",
+      "featured": "Featured Stores"
+    },
+    "newsletter": {
+      "title": "Never Miss a Deal",
+      "description": "Subscribe to our newsletter and get the best deals directly in your inbox",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "success": "Thanks for subscribing!",
+      "error": "Please enter a valid email"
+    },
+    "footer": {
+      "about": "About Us",
+      "contact": "Contact",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy",
+      "copyright": "© 2024 DealSpot. All rights reserved."
+    }
+  }
+  

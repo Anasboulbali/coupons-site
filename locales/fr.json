@@ -1,0 +1,61 @@
+{
+    "meta": {
+      "title": "DealSpot - Meilleures Offres et Codes Promo",
+      "description": "Trouvez les meilleures offres et codes promo pour vos magasins préférés"
+    },
+    "nav": {
+      "home": "Accueil",
+      "deals": "Offres",
+      "stores": "Magasins",
+      "categories": "Catégories",
+      "search": "Rechercher"
+    },
+    "hero": {
+      "title": "Trouvez les Meilleures Offres",
+      "subtitle": "Économisez avec nos codes promo vérifiés",
+      "searchPlaceholder": "Rechercher des magasins ou des marques...",
+      "popularSearches": "Recherches Populaires:",
+      "trending": "Offres Tendances"
+    },
+    "coupons": {
+      "title": "Meilleures Offres du Jour",
+      "verified": "Vérifié",
+      "expires": "Expire le",
+      "copy": "Copier le Code",
+      "copied": "Copié !",
+      "show": "Afficher le Code",
+      "terms": "Conditions Générales",
+      "categories": {
+        "all": "Toutes les Catégories",
+        "fashion": "Mode",
+        "electronics": "Électronique",
+        "food": "Restauration"
+      },
+      "sort": {
+        "newest": "Plus Récents",
+        "popular": "Plus Populaires",
+        "ending": "Se Termine Bientôt"
+      }
+    },
+    "stores": {
+      "title": "Magasins Populaires",
+      "viewAll": "Voir Tous les Magasins",
+      "featured": "Magasins en Vedette"
+    },
+    "newsletter": {
+      "title": "Ne Manquez Aucune Offre",
+      "description": "Abonnez-vous à notre newsletter et recevez les meilleures offres directement dans votre boîte mail",
+      "placeholder": "Entrez votre email",
+      "button": "S'abonner",
+      "success": "Merci pour votre inscription !",
+      "error": "Veuillez entrer un email valide"
+    },
+    "footer": {
+      "about": "À Propos",
+      "contact": "Contact",
+      "terms": "Conditions d'Utilisation",
+      "privacy": "Politique de Confidentialité",
+      "copyright": "© 2024 DealSpot. Tous droits réservés."
+    }
+  }
+  
