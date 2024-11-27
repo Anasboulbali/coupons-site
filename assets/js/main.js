@@ -292,3 +292,93 @@ function setupScrollEffects() {
 
     window.addEventListener('scroll', debounce(handleScrollAnimation, 100));
 }
+// Animation Handler
+class AnimationHandler {
+    constructor() {
+        this.observeElements();
+        this.setupCopyAnimation();
+    }
+
+    observeElements() {
+        const options = {
+            threshold: 0.1,
+            rootMargin: '50px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        // Observe coupon cards
+        document.querySelectorAll('.coupon-card').forEach(card => {
+            observer.observe(card);
+        });
+    }
+
+    setupCopyAnimation() {
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                }, 1000);
+            });
+        });
+    }
+
+    static animateElement(element, animationClass, duration = 1000) {
+        element.classList.add(animationClass);
+        element.addEventListener('animationend', () => {
+            element.classList.remove(animationClass);
+        }, { once: true });
+    }
+}
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const animationHandler = new AnimationHandler();
+
+    // Add stagger animation to coupon container
+    const couponsContainer = document.getElementById('couponsContainer');
+    if (couponsContainer) {
+        couponsContainer.classList.add('stagger-animation');
+    }
+
+    // Animate search results
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(() => {
+            document.querySelectorAll('.search-result').forEach(result => {
+                AnimationHandler.animateElement(result, 'fade-in');
+            });
+        }, 300));
+    }
+
+    // Newsletter animation
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            AnimationHandler.animateElement(newsletterForm, 'pulse');
+        });
+    }
+});
+
+// Utility function for debouncing
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
