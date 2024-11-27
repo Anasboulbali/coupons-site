@@ -1,72 +1,83 @@
-// assets/js/main.js
+// Language management
+let currentLanguage = 'en';
 
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    loadCoupons();
-    initializeLanguage();
-});
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+    
+    // Update active state of language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`${lang}-btn`).classList.add('active');
+    
+    // Update all translations
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = translations[lang];
+        keys.forEach(k => {
+            value = value[k];
+        });
+        
+        if (element.tagName === 'INPUT') {
+            element.placeholder = value;
+        } else {
+            element.textContent = value;
+        }
+    });
+}
 
-// Load coupons
+// Load and display coupons
 async function loadCoupons() {
     try {
         const response = await fetch('data/coupons.json');
         const data = await response.json();
-        displayCoupons(data.coupons);
+        const couponsContainer = document.getElementById('couponsContainer');
+        
+        couponsContainer.innerHTML = data.coupons.map(coupon => `
+            <div class="col-md-4">
+                <div class="coupon-card">
+                    <div class="store-name">${coupon.store}</div>
+                    <h3 class="coupon-title">${coupon.title}</h3>
+                    <p class="coupon-description">${coupon.description}</p>
+                    <div class="coupon-code">
+                        <span class="code">${coupon.code}</span>
+                        <button class="copy-btn" onclick="copyCoupon('${coupon.code}')">
+                            ${translations[currentLanguage].coupons.copy}
+                        </button>
+                    </div>
+                    <div class="coupon-meta">
+                        <span class="expiry">
+                            ${translations[currentLanguage].coupons.expires}: 
+                            ${new Date(coupon.expiryDate).toLocaleDateString()}
+                        </span>
+                        ${coupon.verified ? `
+                            <span class="verified">
+                                <i class="fas fa-check-circle"></i>
+                                ${translations[currentLanguage].coupons.verified}
+                            </span>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `).join('');
     } catch (error) {
         console.error('Error loading coupons:', error);
     }
 }
 
-// Display coupons
-function displayCoupons(coupons) {
-    const container = document.getElementById('couponsContainer');
-    container.innerHTML = coupons.map(coupon => `
-        <div class="col-md-4 mb-4">
-            <div class="coupon-card">
-                <img src="assets/images/stores/${coupon.store.toLowerCase()}.png" 
-                     alt="${coupon.store}" 
-                     class="store-logo mb-3">
-                ${coupon.verified ? `
-                    <span class="verified-badge">
-                        <i class="fas fa-check-circle"></i>
-                        ${translations[currentLanguage].verified}
-                    </span>
-                ` : ''}
-                <h3>${coupon.title}</h3>
-                <p>${coupon.description}</p>
-                <div class="coupon-code">
-                    <span class="code">${coupon.code}</span>
-                    <button class="copy-btn" onclick="copyCoupon('${coupon.code}', '${coupon.store}')">
-                        <i class="far fa-copy"></i>
-                        ${translations[currentLanguage].copy}
-                    </button>
-                </div>
-            </div>
-        </div>
-    `).join('');
-}
-
 // Copy coupon code
-function copyCoupon(code, store) {
+function copyCoupon(code) {
     navigator.clipboard.writeText(code).then(() => {
-        showToast('success', `${translations[currentLanguage].copied} - ${store}`);
+        alert(translations[currentLanguage].coupons.copied);
     }).catch(err => {
-        showToast('error', translations[currentLanguage].copyError);
+        console.error('Error copying code:', err);
     });
 }
 
-// Show toast notification
-function showToast(type, message) {
-    const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
-    toast.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-        <span>${message}</span>
-    `;
-    
-    document.getElementById('toastContainer').appendChild(toast);
-    
-    setTimeout(() => {
-        toast.remove();
-    }, 3000);
-}
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage('en');
+    loadCoupons();
+});

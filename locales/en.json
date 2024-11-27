@@ -63,15 +63,5 @@
     "error": "Error!",
     "subscribe": "Thanks for subscribing!",
     "invalidEmail": "Please enter a valid email"
-  },
-  {
-  "coupons": {
-    "off": "OFF",
-    "shopNow": "Shop Now",
-    "copy": "Copy Code",
-    "copied": "Code Copied!",
-    "verified": "Verified"
   }
-}
-
 }
