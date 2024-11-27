@@ -1,1 +1,67 @@
-
+{
+  "meta": {
+    "title": "DealHub - Save Smart",
+    "description": "Find the best deals and coupons for your online shopping"
+  },
+  "nav": {
+    "home": "Home",
+    "deals": "Deals",
+    "stores": "Stores",
+    "categories": "Categories",
+    "search": "Search",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "hero": {
+    "title": "Find the Best Deals",
+    "subtitle": "Save money with our verified coupons",
+    "searchPlaceholder": "Search for stores or brands...",
+    "popularSearches": "Popular Searches:",
+    "trending": "Trending Deals"
+  },
+  "coupons": {
+    "title": "Today's Top Deals",
+    "verified": "Verified",
+    "expires": "Expires",
+    "copy": "Copy Code",
+    "copied": "Copied!",
+    "show": "Show Code",
+    "terms": "Terms & Conditions",
+    "categories": {
+      "all": "All Categories",
+      "fashion": "Fashion",
+      "electronics": "Electronics",
+      "food": "Food & Dining",
+      "travel": "Travel"
+    },
+    "sort": {
+      "newest": "Newest First",
+      "popular": "Most Popular",
+      "ending": "Ending Soon"
+    }
+  },
+  "stores": {
+    "title": "Popular Stores",
+    "viewAll": "View All Stores",
+    "featured": "Featured Stores"
+  },
+  "footer": {
+    "about": "About Us",
+    "aboutText": "DealHub helps you save money on your online shopping with verified coupons and deals.",
+    "links": "Quick Links",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "contact": "Contact Us",
+    "newsletter": "Newsletter",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 DealHub. All rights reserved."
+  },
+  "alerts": {
+    "success": "Success!",
+    "error": "Error!",
+    "subscribe": "Thanks for subscribing!",
+    "invalidEmail": "Please enter a valid email"
+  }
+}
