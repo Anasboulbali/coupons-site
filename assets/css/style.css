@@ -1,80 +1,56 @@
-/* Verified Badge */
-.verified-badge {
-    background-color: rgba(0, 180, 0, 0.1);
-    color: #00b400;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 10px;
+/* assets/css/style.css */
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #2F2E41;
+    --accent-color: #00BFA6;
+    --background-color: #F8F9FD;
+    --text-color: #2F2E41;
 }
 
-.verified-badge i {
-    font-size: 0.9rem;
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Coupon Card Improvements */
-.coupon-card {
-    background: white;
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-.store-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    padding: 10px;
-    background: #f8f9fa;
-}
-
-.coupon-code {
-    background: #f8f9fa;
-    border: 2px dashed #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-}
-
-.code {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.1rem;
-    font-weight: 600;
+.lang-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
-}
-
-.copy-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 25px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
-.copy-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
+.lang-btn.active {
+    background: var(--primary-color);
+    color: white;
 }
 
-/* Custom Toast Notification */
+/* Coupon Card */
+.coupon-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Toast Notifications */
 .toast-container {
     position: fixed;
     bottom: 20px;
@@ -83,19 +59,15 @@
 }
 
 .toast {
-    background: #333;
-    color: white;
-    padding: 16px 24px;
+    background: white;
+    padding: 15px 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    gap: 10px;
     animation: slideIn 0.3s ease forwards;
-}
-
-.toast.success {
-    background: #00b400;
 }
 
 @keyframes slideIn {
@@ -107,48 +79,4 @@
         transform: translateX(0);
         opacity: 1;
     }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-/* Coupon Meta Information */
-.coupon-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.expiry {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.expiry i {
-    color: #ff6b6b;
-}
-
-/* Discount Badge */
-.discount-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--accent-color);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
 }
