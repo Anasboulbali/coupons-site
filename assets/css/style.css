@@ -1,49 +1,152 @@
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #2F2E41;
+    --accent-color: #00BFA6;
+    --background-color: #F8F9FD;
+    --text-color: #2F2E41;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Header */
+.main-header {
+    background: white;
+    box-shadow: var(--card-shadow);
+}
+
+.navbar-brand {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    box-shadow: var(--card-shadow);
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Coupons Section */
+.coupons-section {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
 }
 
 .coupon-card {
-    animation: fadeIn 0.5s ease-in;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-subscribe {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .coupon-card {
-        margin-bottom: 1rem;
+    .hero-title {
+        font-size: 2.5rem;
     }
     
-    .container {
-        padding: 0 15px;
+    .newsletter-form {
+        flex-direction: column;
     }
-}
-
-/* Theme Colors */
-:root {
-    --primary-color: #ff7900;
-    --secondary-color: #000000;
-    --accent-color: #4bb4e6;
-}
-
-/* Custom Styles */
-.code-box {
-    background: var(--primary-color);
-    color: white;
-    padding: 0.5rem;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.verified-badge {
-    background: #e8f5e9;
-    color: #2e7d32;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-bottom: 8px;
 }
