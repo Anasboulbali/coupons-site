@@ -253,3 +253,18 @@ function checkInitialCategory() {
         }
     }
 }
+function showLoadingState() {
+    const container = document.getElementById('couponsContainer');
+    container.innerHTML = Array(6).fill().map(() => `
+        <div class="col-md-4 mb-4">
+            <div class="coupon-card skeleton">
+                <div class="store-header skeleton-animate"></div>
+                <div class="coupon-content">
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-button"></div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}

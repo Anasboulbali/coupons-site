@@ -538,3 +538,71 @@ body {
         transform: none;
     }
 }
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #7C3AED;
+    --accent-color: #06B6D4;
+    --background: #F9FAFB;
+    --text-color: #1F2937;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 120px 0 80px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title .highlight {
+    color: var(--accent-color);
+    position: relative;
+}
+
+.search-box {
+    background: white;
+    border-radius: 30px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.coupon-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+}
+
+.store-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.verified-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

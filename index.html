@@ -62,39 +62,70 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
+    <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h1 class="hero-title">
-                        Save Money with the <span class="highlight">Best Deals</span>
+                        Find the Best <span class="highlight">Deals & Coupons</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Discover exclusive coupons and discounts from your favorite stores
+                        Save money with verified promo codes from your favorite stores
                     </p>
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" 
-                               id="searchInput" 
-                               placeholder="Search for stores or deals..."
-                               autocomplete="off">
-                    </div>
-                    <div class="popular-tags">
-                        <span>Popular:</span>
-                        <a href="#" class="tag">Amazon</a>
-                        <a href="#" class="tag">Nike</a>
-                        <a href="#" class="tag">Apple</a>
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" 
+                                   placeholder="Search for stores or deals..." 
+                                   id="searchInput">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="popular-tags">
+                            <span>Popular:</span>
+                            <a href="#" class="tag">Amazon</a>
+                            <a href="#" class="tag">Nike</a>
+                            <a href="#" class="tag">Apple</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="assets/images/hero-illustration.svg" 
-                         alt="Save money illustration" 
-                         class="hero-image">
+                    <div class="hero-image-container">
+                        <img src="assets/images/hero-illustration.svg" alt="Savings illustration">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-shape"></div>
     </section>
+    
+    <div class="coupon-card">
+        <div class="store-header">
+            <img src="assets/images/stores/${store}.png" alt="${store}" class="store-logo">
+            <span class="verified-badge">
+                <i class="fas fa-check-circle"></i> Verified
+            </span>
+        </div>
+        <div class="coupon-content">
+            <h3 class="coupon-title">${title}</h3>
+            <p class="coupon-description">${description}</p>
+            <div class="coupon-code">
+                <span class="code">${code}</span>
+                <button class="copy-btn" onclick="copyCoupon('${code}')">
+                    <i class="far fa-copy"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+            <div class="coupon-meta">
+                <span class="expiry">
+                    <i class="far fa-clock"></i> Expires: ${expiryDate}
+                </span>
+                <span class="used-count">
+                    <i class="fas fa-user"></i> Used ${usedCount} times
+                </span>
+            </div>
+        </div>
+    </div>
+    
 
     <!-- Featured Stores -->
     <section class="featured-stores" id="stores">
