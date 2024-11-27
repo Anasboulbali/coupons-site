@@ -6,7 +6,7 @@
     <title>DealSpot - Best Deals & Coupons</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Find the best deals, discounts, and coupons for your favorite stores">
+    <meta name="description" content="Find the best deals and coupons for your favorite stores">
     <meta name="keywords" content="deals, coupons, discounts, promo codes, savings">
 
     <!-- Favicon -->
@@ -15,30 +15,19 @@
     <!-- Core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- Logo -->
             <a class="navbar-brand" href="#">
                 <i class="fas fa-tags"></i> DealSpot
             </a>
-
-            <!-- Mobile Toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navigation Items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
@@ -51,8 +40,6 @@
                         <a class="nav-link" href="#stores">Stores</a>
                     </li>
                 </ul>
-
-                <!-- Language Switcher -->
                 <div class="language-switcher d-flex align-items-center">
                     <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
                     <button class="lang-btn" onclick="changeLanguage('fr')">FR</button>
@@ -62,7 +49,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
@@ -97,45 +84,13 @@
             </div>
         </div>
     </section>
-    
-    <div class="coupon-card">
-        <div class="store-header">
-            <img src="assets/images/stores/${store}.png" alt="${store}" class="store-logo">
-            <span class="verified-badge">
-                <i class="fas fa-check-circle"></i> Verified
-            </span>
-        </div>
-        <div class="coupon-content">
-            <h3 class="coupon-title">${title}</h3>
-            <p class="coupon-description">${description}</p>
-            <div class="coupon-code">
-                <span class="code">${code}</span>
-                <button class="copy-btn" onclick="copyCoupon('${code}')">
-                    <i class="far fa-copy"></i>
-                    <span>Copy</span>
-                </button>
-            </div>
-            <div class="coupon-meta">
-                <span class="expiry">
-                    <i class="far fa-clock"></i> Expires: ${expiryDate}
-                </span>
-                <span class="used-count">
-                    <i class="fas fa-user"></i> Used ${usedCount} times
-                </span>
-            </div>
-        </div>
-    </div>
-    
 
     <!-- Featured Stores -->
     <section class="featured-stores" id="stores">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Featured Stores</h2>
-            <div class="swiper storesSwiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-                    <!-- Stores will be added dynamically -->
-                </div>
-                <div class="swiper-pagination"></div>
+            <div class="row store-grid" id="storesContainer">
+                <!-- Stores will be loaded here -->
             </div>
         </div>
     </section>
@@ -145,7 +100,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-aos="fade-up">Today's Best Deals</h2>
-                <div class="filters" data-aos="fade-up" data-aos-delay="100">
+                <div class="filters" data-aos="fade-up">
                     <select class="form-select" id="categoryFilter">
                         <option value="all">All Categories</option>
                         <option value="fashion">Fashion</option>
@@ -155,7 +110,7 @@
                 </div>
             </div>
             <div class="row" id="couponsContainer">
-                <!-- Coupons will be added dynamically -->
+                <!-- Coupons will be loaded here -->
             </div>
         </div>
     </section>
@@ -166,7 +121,7 @@
             <div class="newsletter-box" data-aos="zoom-in">
                 <h3>Never Miss a Deal</h3>
                 <p>Subscribe to our newsletter and get the best deals directly in your inbox.</p>
-                <form class="newsletter-form">
+                <form class="newsletter-form" id="newsletterForm">
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Enter your email">
                         <button class="btn btn-primary" type="submit">Subscribe</button>
@@ -175,42 +130,12 @@
             </div>
         </div>
     </section>
-<!-- Add to head section of index.html -->
-<meta name="description" content="Find the best deals, discounts, and coupons for your favorite stores. Save money with verified promo codes.">
-<meta name="keywords" content="coupons, deals, discounts, promo codes, savings, online shopping">
-<meta name="author" content="DealSpot">
-<meta property="og:title" content="DealSpot - Best Deals & Coupons">
-<meta property="og:description" content="Find the best deals and discounts for your favorite stores">
-<meta property="og:image" content="assets/images/og-image.jpg">
-<meta property="og:url" content="https://yourdomain.com">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://yourdomain.com">
 
-<!-- Add structured data -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "DealSpot",
-    "url": "https://yourdomain.com",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://yourdomain.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-    }
-}
-</script>
-
-    <!-- Toast Container for Notifications -->
+    <!-- Toast Container -->
     <div id="toastContainer"></div>
 
-    <!-- Core JavaScript -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
