@@ -1,108 +1,138 @@
-// Main JavaScript file
-document.addEventListener('DOMContentLoaded', function() {
+// Main JavaScript functionality
+document.addEventListener('DOMContentLoaded', () => {
+    initializeNavigation();
+    loadDeals();
+    initializeSearch();
+    initializeNewsletter();
+});
+
+// Navigation functionality
+function initializeNavigation() {
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll;
+    });
+}
+
+// Load and display deals
+function loadDeals() {
     // Sample deals data (in production, this would come from an API)
     const deals = [
         {
             id: 1,
-            title: "50% Off Premium Headphones",
-            category: "Electronics",
-            currentPrice: 99.99,
-            originalPrice: 199.99,
+            title: "Premium Wireless Headphones",
+            currentPrice: 149.99,
+            originalPrice: 299.99,
             discount: 50,
-            image: "https://via.placeholder.com/300x200",
-            location: "Online Deal",
-            expiresIn: "2 days"
+            image: "path-to-image.jpg",
+            merchant: "ElectroStore",
+            expiresIn: "2 days",
+            category: "Electronics"
         },
-        // Add more deals here
+        // Add more deals...
     ];
 
-    // Initialize the page
-    initializePage();
-    loadFeaturedDeals();
-    loadTrendingDeals();
-    initializeSearch();
-});
+    displayDeals(deals);
+}
 
-// Initialize page functionality
-function initializePage() {
-    // Add scroll event listener for sticky header
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.classList.add('sticky');
-        } else {
-            header.classList.remove('sticky');
-        }
+// Create and display deal cards
+function displayDeals(deals) {
+    const dealsGrid = document.querySelector('.deals-grid');
+    
+    deals.forEach(deal => {
+        const dealCard = createDealCard(deal);
+        dealsGrid.appendChild(dealCard);
     });
 }
 
-// Create deal card HTML
+// Create individual deal card
 function createDealCard(deal) {
-    return `
-        <div class="col-md-4 col-sm-6">
-            <div class="deal-card">
-                <div class="card-img-wrapper">
-                    <img src="${deal.image}" alt="${deal.title}">
-                    <span class="discount-badge">-${deal.discount}%</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="deal-title">${deal.title}</h3>
-                    <div class="deal-price">
-                        <span class="current-price">$${deal.currentPrice}</span>
-                        <span class="original-price">$${deal.originalPrice}</span>
-                    </div>
-                    <div class="deal-footer">
-                        <span class="location">${deal.location}</span>
-                        <span class="expires">Expires in ${deal.expiresIn}</span>
-                    </div>
-                </div>
+    const discount = Math.round(((deal.originalPrice - deal.currentPrice) / deal.originalPrice) * 100);
+    
+    const card = document.createElement('div');
+    card.className = 'deal-card';
+    card.innerHTML = `
+        <div class="deal-image">
+            <img src="${deal.image}" alt="${deal.title}">
+            <span class="deal-tag">${discount}% OFF</span>
+        </div>
+        <div class="deal-content">
+            <h3 class="deal-title">${deal.title}</h3>
+            <div class="deal-price">
+                <span class="current-price">$${deal.currentPrice}</span>
+                <span class="original-price">$${deal.originalPrice}</span>
+            </div>
+            <div class="deal-footer">
+                <span class="deal-merchant">${deal.merchant}</span>
+                <span class="deal-expires">Expires in ${deal.expiresIn}</span>
             </div>
         </div>
     `;
+
+    return card;
 }
 
-// Load featured deals
-function loadFeaturedDeals() {
-    const featuredDealsContainer = document.getElementById('featuredDeals');
-    const featuredDeals = deals.slice(0, 6); // Get first 6 deals
-    
-    featuredDeals.forEach(deal => {
-        featuredDealsContainer.innerHTML += createDealCard(deal);
-    });
-}
-
-// Load trending deals
-function loadTrendingDeals() {
-    const trendingDealsContainer = document.getElementById('trendingDeals');
-    const trendingDeals = deals.slice(6, 12); // Get next 6 deals
-    
-    trendingDeals.forEach(deal => {
-        trendingDealsContainer.innerHTML += createDealCard(deal);
-    });
-}
-
-// Initialize search functionality
+// Search functionality
 function initializeSearch() {
-    const searchInput = document.getElementById('searchInput');
-    
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const filteredDeals = deals.filter(deal => 
-            deal.title.toLowerCase().includes(searchTerm) ||
-            deal.category.toLowerCase().includes(searchTerm)
-        );
+    const searchInput = document.querySelector('.search-bar input');
+    let searchTimeout;
+
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
         
-        // Update deals display
-        updateDealsDisplay(filteredDeals);
+        searchTimeout = setTimeout(() => {
+            const searchTerm = e.target.value.toLowerCase();
+            // Implement search logic here
+            console.log('Searching for:', searchTerm);
+        }, 300);
     });
 }
 
-// Update deals display based on search/filter
-function updateDealsDisplay(filteredDeals) {
-    const featuredDealsContainer = document.getElementById('featuredDeals');
-    featuredDealsContainer.innerHTML = '';
+// Newsletter functionality
+function initializeNewsletter() {
+    const form = document.querySelector('.newsletter-form');
     
-    filteredDeals.forEach(deal => {
-        featuredDealsContainer.innerHTML += createDealCard(deal);
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input').value;
+        
+        // Implement newsletter signup logic here
+        console.log('Newsletter signup:', email);
+        
+        // Show success message
+        showNotification('Thanks for subscribing!');
     });
 }
+
+// Utility function for notifications
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// Add smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
