@@ -1,0 +1,49 @@
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.coupon-card {
+    animation: fadeIn 0.5s ease-in;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .coupon-card {
+        margin-bottom: 1rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Theme Colors */
+:root {
+    --primary-color: #ff7900;
+    --secondary-color: #000000;
+    --accent-color: #4bb4e6;
+}
+
+/* Custom Styles */
+.code-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.verified-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 8px;
+}
