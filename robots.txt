@@ -1,0 +1,35 @@
+# www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Allow: /category/
+Allow: /store/
+Allow: /about
+Allow: /contact
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# Disallow specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /*.md$
+
+# Allow sitemap
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl-delay for specific bots
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: BadBot
+Disallow: /
