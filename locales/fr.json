@@ -1,1 +1,67 @@
-
+{
+  "meta": {
+    "title": "DealHub - Économisez Malin",
+    "description": "Trouvez les meilleurs codes promo et réductions pour vos achats en ligne"
+  },
+  "nav": {
+    "home": "Accueil",
+    "deals": "Offres",
+    "stores": "Magasins",
+    "categories": "Catégories",
+    "search": "Rechercher",
+    "login": "Connexion",
+    "signup": "Inscription"
+  },
+  "hero": {
+    "title": "Trouvez les Meilleures Offres",
+    "subtitle": "Économisez avec nos coupons vérifiés",
+    "searchPlaceholder": "Rechercher des magasins ou des marques...",
+    "popularSearches": "Recherches populaires :",
+    "trending": "Offres Tendances"
+  },
+  "coupons": {
+    "title": "Meilleures Offres du Jour",
+    "verified": "Vérifié",
+    "expires": "Expire le",
+    "copy": "Copier le Code",
+    "copied": "Copié !",
+    "show": "Afficher le Code",
+    "terms": "Conditions Générales",
+    "categories": {
+      "all": "Toutes les Catégories",
+      "fashion": "Mode",
+      "electronics": "Électronique",
+      "food": "Alimentation",
+      "travel": "Voyage"
+    },
+    "sort": {
+      "newest": "Plus Récents",
+      "popular": "Plus Populaires",
+      "ending": "Se Termine Bientôt"
+    }
+  },
+  "stores": {
+    "title": "Magasins Populaires",
+    "viewAll": "Voir Tous les Magasins",
+    "featured": "Magasins en Vedette"
+  },
+  "footer": {
+    "about": "À Propos",
+    "aboutText": "DealHub vous aide à économiser sur vos achats en ligne avec des coupons et offres vérifiés.",
+    "links": "Liens Rapides",
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Politique de Confidentialité",
+    "contact": "Nous Contacter",
+    "newsletter": "Newsletter",
+    "emailPlaceholder": "Entrez votre email",
+    "subscribe": "S'abonner",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2024 DealHub. Tous droits réservés."
+  },
+  "alerts": {
+    "success": "Succès !",
+    "error": "Erreur !",
+    "subscribe": "Merci pour votre inscription !",
+    "invalidEmail": "Veuillez entrer un email valide"
+  }
+}
