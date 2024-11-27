@@ -1,0 +1,287 @@
+/* animations.css */
+
+/* Keyframes Definitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Loading Animation */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Page Transitions */
+.page-transition {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Coupon Card Animations */
+.coupon-card {
+    animation: scaleIn 0.3s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Copy Button Animation */
+.copy-btn {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.copy-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.copy-btn:active::before {
+    width: 200%;
+    height: 200%;
+}
+
+.copy-btn.copied {
+    animation: pulse 0.3s ease-out;
+}
+
+/* Toast Notifications */
+.toast {
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast.hiding {
+    animation: slideIn 0.3s ease-out reverse;
+}
+
+/* Search Input Animation */
+.search-box input {
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    transform: scale(1.02);
+}
+
+/* Category Filter Animation */
+.category-filter {
+    transition: all 0.3s ease;
+}
+
+.category-filter:hover {
+    transform: translateY(-2px);
+}
+
+/* Store Logo Animation */
+.store-logo {
+    transition: all 0.3s ease;
+}
+
+.store-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Share Button Animation */
+.share-btn {
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    transform: rotate(15deg);
+}
+
+/* Newsletter Form Animation */
+.newsletter-form input {
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    transform: scale(1.02);
+}
+
+.newsletter-form button {
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+/* Success Checkmark Animation */
+.checkmark {
+    animation: scaleIn 0.3s ease-out;
+}
+
+/* Error Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.error-shake {
+    animation: shake 0.6s ease-out;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+}
+
+/* Language Switcher Animation */
+.lang-btn {
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Modal Animations */
+.modal {
+    animation: scaleIn 0.3s ease-out;
+}
+
+.modal.closing {
+    animation: scaleIn 0.3s ease-out reverse;
+}
+
+/* Hero Section Animations */
+.hero-title {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.hero-search {
+    animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+/* Infinite Loading Animation */
+.infinite-scroll-loader {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Responsive Animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .coupon-card:hover {
+        transform: none;
+    }
+    
+    .store-logo:hover {
+        transform: none;
+    }
+}
