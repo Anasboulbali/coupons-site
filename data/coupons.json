@@ -1,0 +1,24 @@
+{
+  "coupons": [
+    {
+      "id": "1",
+      "title": "20% de réduction",
+      "store": "Amazon",
+      "code": "SAVE20",
+      "description": "20% de réduction sur votre première commande",
+      "expiryDate": "2024-12-31",
+      "category": "Shopping",
+      "verified": true
+    },
+    {
+      "id": "2",
+      "title": "Livraison gratuite",
+      "store": "Cdiscount",
+      "code": "FREESHIP",
+      "description": "Livraison gratuite dès 25€ d'achat",
+      "expiryDate": "2024-12-31",
+      "category": "Shopping",
+      "verified": true
+    }
+  ]
+}
